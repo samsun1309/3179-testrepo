@@ -1,0 +1,61 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "data/users-by-social-media-platform.csv"},
+    "title": "No. of users by Social Media Platform",
+    "width": 600,
+    "height": 600,
+    "encoding": {"x": {"field": "Year", "type": "temporal"}},
+    "layer": [
+      {
+        "encoding": {
+          "color": {"field": "Entity", "type": "nominal"},
+          "y": {"field": "Users", "type": "quantitative"}
+        },
+        "layer": [
+          {"mark": "line"},
+          {"transform": [{"filter": {"param": "hover", "empty": false}}], "mark": "circle"}
+        ]
+      },
+      {
+        "transform": [{"pivot": "Entity", "value": "Users", "groupby": ["Year"]}],
+        "mark": "rule",
+        "encoding": {
+          "opacity": {
+            "condition": {"value": 0.3, "param": "hover", "empty": false},
+            "value": 0
+          },
+          "tooltip": [
+            {"field": "Facebook", "type": "nominal"},
+            {"field": "Flickr", "type": "nominal"},
+            {"field": "Friendster", "type": "nominal"},
+            {"field": "Google Buzz", "type": "nominal"},
+            {"field": "Google+", "type": "nominal"},
+            {"field": "Hi5", "type": "nominal"},
+            {"field": "Instagram", "type": "nominal"},
+            {"field": "MySpace", "type": "nominal"},
+            {"field": "Orkut", "type": "nominal"},
+            {"field": "Pinterest", "type": "nominal"},
+            {"field": "Reddit", "type": "nominal"},
+            {"field": "Snapchat", "type": "nominal"},
+            {"field": "TikTok", "type": "nominal"},
+            {"field": "Tumblr", "type": "nominal"},
+            {"field": "Twitter", "type": "nominal"},
+            {"field": "WeChat", "type": "nominal"},
+            {"field": "Weibo", "type": "nominal"},
+            {"field": "Whatsapp", "type": "nominal"},
+            {"field": "YouTube", "type": "nominal"}
+          ]
+        },
+        "params": [{
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": ["date"],
+            "nearest": true,
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }]
+      }
+    ]
+  }

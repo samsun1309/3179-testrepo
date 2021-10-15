@@ -1,0 +1,10 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A scatterplot showing horsepower and miles per gallons for various cars.",
+    "data": {"url": "data/internet_usage.csv"},
+    "mark": "point",
+    "encoding": {
+      "x": {"field": "internetuserate", "type": "quantitative"},
+      "y": {"field": "incomeperperson", "type": "quantitative"}
+    }
+  }

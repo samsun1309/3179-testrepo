@@ -1,13 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>My first HTML document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&family=Prompt:wght@600&display=swap" rel="stylesheet">    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <script src="js/vegalite_vis.js"></script>
+    <title>THE WORLD OF INTERNET</title>
 </head>
 <body>
-    <h1>Heading 1 - edited</h1>
-    <p>My first paragraph.</p>
-    <a href="https://www.youtube.com">CLICK ME</a>
-    <h2>Emebdding images in HTML</h2>
-    <img src="covid_banner.png">
+    <div class="container-fluid">
+      <div class="card" id="dashboard_title_card">
+        
+        <!-- <div class="card-body">
+          <h1 id="dashboard_title_text" style="text-align: center;">The World of Internet</h1>
+          <img class="card-img-overlay" src="assets/banner.jpg" alt="Card image cap">
+          
+        </div> -->
+
+        <img class="card-img-top" src="assets/banner_img.jpg" alt="" style="width:100%">
+        <div class="card-img-overlay align-items-center d-flex justify-content-center">
+          <h4 class="card-title" id="dashboard_title_text">The <span style="color: aqua;">Internet</span> Era</h4>
+        </div>
+      </div>
+
+      <div class="card text_card">
+        <div class="card-body">
+          <p class="card-text">The Internet is a vast <span>network of computers</span>  
+            and other mini-networks all linked together so that everyone can find information, 
+            purchase products, or meet new people.  It is easily assessable from home for anyone
+             that has a computer and a modem or at a local library.  It has made a <span>huge impact</span> 
+              since its introduction to the public and now some people cannot see life without
+               it.  It is also relatively new considering it was just about 10 years ago that 
+               it was made public and easily accessible to everyone thorough online services. </p>
+        </div>
+      </div>
+
+      <!-- <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+        <div id="choropleth_map"></div>
+      </div> -->
+        
+        <div class="card align-items-center d-flex justify-content-center" role="alert">
+          <!-- <div class="col-md-8"> -->
+            <!-- <h1 class="display-5">"Hello, world!"</h1> -->
+            <div id="choropleth_map"></div>
+            <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
+          <!-- </div> -->
+        </div>
+
+        <!-- <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ab placeat veniam, nulla laudantium velit sapiente. Laudantium harum accusamus facilis, eaque voluptatibus unde a id perspiciatis aliquid, maxime voluptatum assumenda.
+        </p>
+
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt dolorum dicta laudantium. Tenetur recusandae ratione ullam neque nostrum, odio omnis mollitia error aperiam officiis hic excepturi vitae natus, tempore similique?
+        </p>
+
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus eius sapiente et tenetur, facilis libero esse facere deserunt mollitia veniam inventore ducimus exercitationem minima dignissimos. Itaque nobis eligendi nemo minus? Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Facere praesentium ex officia. Amet, facere suscipit et vel eius fuga nulla, quisquam dolorum laboriosam est iure? Similique impedit cumque quod blanditiis. Lorem ipsum dolor sit, amet consectetur adipisicing
+            elit. Aperiam placeat neque expedita culpa dolores voluptatibus voluptate nemo, laborum reprehenderit corrupti molestias. Amet numquam, tempora minus officia quod voluptatibus dolorem. Alias. Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Dolore vero quas minus doloremque alias saepe error. Porro cumque impedit tempora veritatis maxime iusto! Et eligendi sapiente magni sint similique quisquam?
+        </p> -->
+
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Is there a relationship between Internet user rate and Urban rate / Income per person?</h4>
+            <div id="scatter_plot"></div>
+            <div id="scatter_plot2"></div>
+          </div>
+          <!-- <p class="card-text">Description</p> -->
+          <div class="w-100"></div>
+        </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">How long do teenagers use the Internet everyday?</h4>
+        </div>
+        <div id="bar_chart"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">What is the trend of social media platforms over the years?</h4>
+        </div>
+        <div id="line_chart"></div>
+      </div>
+
+      <!-- <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">What is the trend of social media platforms over the years?</h4>
+        </div>
+        <div id="isotype_chart"></div>
+      </div> -->
+    </div>
+    
 </body>
 </html>
