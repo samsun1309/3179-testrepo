@@ -1,0 +1,95 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "config":  {"style": {"circle": {"size": 50}}},
+    "width":300,
+    "height":300,
+    "data": {"url": "data/factors-affecting-internet-use-rate.csv"},
+    "transform": [
+      {
+         "filter": "datum.Continent != ''"
+       }
+    ],
+    "params": [ {
+      "name": "Continent_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Africa",
+          "Antarctica",
+          "Asia",
+          "Europe",
+          "North America",
+          "Oceania",
+          "South America"
+        ],
+        "labels":[
+          "Show All",
+          "Africa",
+          "Antarctica",
+          "Asia",
+          "Europe",
+          "North America",
+          "Oceania",
+          "South America"
+        ],
+        "name": "Select continent: " }
+      }
+    ],
+    "layer": [
+    {
+    "mark": "circle",
+    "transform": [
+      {"filter": "Continent_selection == null || datum.Continent == Continent_selection"}    ],
+    "encoding": {
+      "x": {
+        "field": "internetuserate", 
+        "type": "quantitative",
+        "axis":{
+          "grid": true,
+          "tickCount":5
+        },
+        "scale": {"domain": [0, 100]}
+      },
+      "y": {
+        "field": "urbanrate", 
+        "type": "quantitative"
+      },
+      "color": {
+        "field": "Continent",
+        "type": "nominal"
+      },
+      "tooltip": [
+        {"field": "Continent", "type": "nominal", "title": "Continent"},
+        {"field": "country", "type": "nominal", "title": "Country"},
+        {"field": "internetuserate", "type": "quantitative", "title": "Internet use rate (%)"},
+        {"field": "urbanrate", "type": "quantitative", "title":"Urban rate (%)"}
+      ]
+    }},
+    {
+      "mark": {
+        "type": "line",
+        "color": "grey"
+      },
+      "transform": [
+        {
+          "regression": "urbanrate",
+          "on": "internetuserate"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "internetuserate",
+          "type": "quantitative",
+          "title": "Internet use rate (%)",
+          "scale":{}
+        },
+        "y": {
+          "field": "urbanrate",
+          "type": "quantitative",
+          "title": "Urban rate (%)"
+        }
+      }
+    }]
+    }
+  

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Ranged dot plot",
+  "width":800,
+  "height":550,
+  "data": {
+    "url":"data/social-media-platform-active-years.csv"
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "temporal",
+      "axis":{
+        "grid": false
+      },
+      "scale": {"domain": ["2001", "2020"]}
+    },
+    "y": {
+      "field": "Platform",
+      "type": "nominal",
+      "title": "Social Media",
+      "axis":{"grid": true}
+    }
+  },
+  "layer": [
+    {
+      "mark": "line",
+      "encoding": {
+        "detail": {"field": "Platform", "type": "nominal"},
+        "color": {"value": "grey"}
+      }
+    },
+    {
+      "mark": {"type": "image", "width": 25, "height": 25},
+      "encoding": {
+        "url": {"field": "Img", "type": "nominal"},
+        "tooltip": [
+          {"field": "Platform", "type": "nominal","title": "Platform"},
+          {"field": "Year", "type": "temporal","title": "Year","timeUnit":"year"},
+          {"field": "Users", "type": "quantitative","title": "No. of users"}
+        ]
+      }
+    }
+  ]
+}
