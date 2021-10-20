@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -22,22 +22,31 @@
     <title>THE WORLD OF INTERNET</title>
 </head>
 <body>
-    <div class="container-fluid">
-      <div class="card" id="dashboard_title_card">
-        
-        <!-- <div class="card-body">
-          <h1 id="dashboard_title_text" style="text-align: center;">The World of Internet</h1>
-          <img class="card-img-overlay" src="assets/banner.jpg" alt="Card image cap">
-          
-        </div> -->
+    <div class="container">
 
+      <div class="card" id="dashboard_title_card">
         <img class="card-img-top" src="assets/banner_img.jpg" alt="" style="width:100%">
         <div class="card-img-overlay align-items-center d-flex justify-content-center">
           <h4 class="card-title" id="dashboard_title_text">The <span style="color: aqua;">Internet</span> Era</h4>
         </div>
       </div>
 
-      <div class="card text_card">
+      <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <div class="container">
+          <a class="navbar-link">Quick navigation: </a>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="#map">Worldwide Internet Usage</a>
+              <a class="nav-link" href="#scatterplot">Factors affecting Internet user rate</a>
+              <a class="nav-link" href="#scatterplot2">Daily Duration of Internet Usage</a>
+              <a class="nav-link" href="#linechart">Social Media Trends</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+      <!-- <div class="card text_card">
         <div class="card-body">
           <p class="card-text">The Internet is a vast <span>network of computers</span>  
             and other mini-networks all linked together so that everyone can find information, 
@@ -47,71 +56,100 @@
                it.  It is also relatively new considering it was just about 10 years ago that 
                it was made public and easily accessible to everyone thorough online services. </p>
         </div>
-      </div>
-
-      <!-- <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-        <div id="choropleth_map"></div>
       </div> -->
         
-        <div class="card align-items-center d-flex justify-content-center" role="alert">
-          <!-- <div class="col-md-8"> -->
-            <!-- <h1 class="display-5">"Hello, world!"</h1> -->
+        <div class="card" id="map">
+          <div class="card-body">
+          <h4 class="card-title">How commonly is the Internet used worldwide?</h4>
+          <hr>
+          <p class="card-text">
+            The Internet is a <span>large network</span> that links several independent networks 
+            and connects computers in different locations all over the world. 
+            Computers in this network can communicate in different ways as 
+            well as share various types of information. The Internet is known 
+            to have made a <span>huge impact</span> since its introduction to the public, 
+            which is demonstrated by its rapid growth worldwide over the past 
+            few decades. The map below shows the proportion of Internet users worldwide.
+          </p>
+            <div class="align-items-center d-flex justify-content-center">
             <div id="choropleth_map"></div>
-            <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
-          <!-- </div> -->
-        </div>
+            </div>
+              </div>
+              </div>
 
-        <!-- <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ab placeat veniam, nulla laudantium velit sapiente. Laudantium harum accusamus facilis, eaque voluptatibus unde a id perspiciatis aliquid, maxime voluptatum assumenda.
-        </p>
-
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt dolorum dicta laudantium. Tenetur recusandae ratione ullam neque nostrum, odio omnis mollitia error aperiam officiis hic excepturi vitae natus, tempore similique?
-        </p>
-
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus eius sapiente et tenetur, facilis libero esse facere deserunt mollitia veniam inventore ducimus exercitationem minima dignissimos. Itaque nobis eligendi nemo minus? Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Facere praesentium ex officia. Amet, facere suscipit et vel eius fuga nulla, quisquam dolorum laboriosam est iure? Similique impedit cumque quod blanditiis. Lorem ipsum dolor sit, amet consectetur adipisicing
-            elit. Aperiam placeat neque expedita culpa dolores voluptatibus voluptate nemo, laborum reprehenderit corrupti molestias. Amet numquam, tempora minus officia quod voluptatibus dolorem. Alias. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Dolore vero quas minus doloremque alias saepe error. Porro cumque impedit tempora veritatis maxime iusto! Et eligendi sapiente magni sint similique quisquam?
-        </p> -->
-
-        <div class="card">
+        <div class="card" id="scatterplot">
           <div class="card-body">
             <h4 class="card-title">Is there a relationship between Internet user rate and Urban rate / Income per person?</h4>
-            <div id="scatter_plot"></div>
-            <div id="scatter_plot2"></div>
+            <hr>
+            <p class="card-text">
+              There can be several factors that affect the Internet usage rate. Some factors that are analyzed in this section 
+              is the urban rate of a country and the average income per person in a country. It can be seen that the scatterplot
+              on the left shows a correlation between the <span>Internet usage rate</span> and <span>urban rate</span> of a country, indicated by the increasing
+              trend line on the plot. This means that the higher the urban rate of a country, the higher the Internet usage rate.
+            </p>
+
+            <p class="card-text">
+              The scatterplot on the right also shows a correlation between the <span>Internet usage rate</span> and the average <span>income per person</span> which is 
+              indicated by the increasing trend line. Generally, this means that the higher the average income, the higher the Internet usage
+              rate in the country. However, there are a few countries that don't correspond to this trend, as shown by the anomaly points on 
+              the chart. 
+            </p>
+            <br>
+              <div class="align-items-center d-flex justify-content-center">
+              <div id="scatter_plot"></div>
+              <div id="scatter_plot2"></div>
           </div>
-          <!-- <p class="card-text">Description</p> -->
-          <div class="w-100"></div>
+          </div>
         </div>
 
-      <div class="card">
+      <div class="card" id="scatterplot2">
         <div class="card-body">
           <h4 class="card-title">How long do teenagers use the Internet everyday?</h4>
+          <hr>
+          <p class="card-text">
+            The barchart below shows the daily average time spent on the Internet by teenagers
+            for some countries. <span style="font-size: 20px;">Netherlands</span> tops the list with an average of 6 hours of Internet usage per day 
+            whereas <span style="font-size: 20px;">Slovenia</span> is the country with the least number of hours which is only 2.8 hours.   
+          </p>
         </div>
+        <div class="align-items-center d-flex justify-content-center">
         <div id="bar_chart"></div>
+      </div>
+      </div>
+
+
+      <div class="card" id="linechart">
+        <div class="card-body">
+          <h4 class="card-title">What were the trending social media platforms over the years?</h4>
+          <hr>
+          <p class="card-text" style="text-align: center;">
+            The timeline below shows the period when the social media platforms were trending and most popular. 
+            <br>It can be seen that <span style="color:#4267B2; font-size: 20px;">Facebook</span> and <span style="color: brown; font-size: 20px;">YouTube</span> have been consistently popular for many years. 
+          </p>
+        </div>
+        <div class="align-items-center d-flex justify-content-center">
+        <div id="timeline"></div>
+      </div>
       </div>
 
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">What is the trend of social media platforms over the years?</h4>
+          <h4 class="card-title">How did the number of users change over the years for different social media platforms?</h4>
+          <hr>
+          <p class="card-text" style="text-align: center;">
+            The line chart below shows the growth of social media platforms according to the number of users over the years.
+            <br>Once again, <span style="color:#4267B2; font-size: 20px;">Facebook</span> and <span style="color: brown; font-size: 20px;">YouTube</span> are one of the fastest growing platforms with the most number of users.
+          </p>
         </div>
+        <div class="align-items-center d-flex justify-content-center">
         <div id="line_chart"></div>
       </div>
-
-      <!-- <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">What is the trend of social media platforms over the years?</h4>
-        </div>
-        <div id="isotype_chart"></div>
-      </div> -->
-    </div>
-    
+      </div>
+      <!-- Footer -->
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © A visualization by Samsun
+      </div>
+      <!-- Footer -->
+    </div>    
 </body>
 </html>
